@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 var planets = document.querySelectorAll(".planet");
 
 function stopAnimation() {
@@ -49,4 +48,3 @@ for (var i = 0; i < planets.length; i++) {
 for (i = 0; i < planets.length; i++) {
     planets[i].addEventListener("mouseleave" , startAnimation);
 }
->>>>>>> 2f055d7b471d3caac14f8b976b9a2464e10b53b5
