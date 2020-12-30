@@ -58,7 +58,9 @@ body {
 }
 
 .sunline {
-    background-color: hsla(26, 98%, 56%, 1.00);
+    background-color: #FB7209;
+    background-repeat: no-repeat;
+    background-size: cover;
     border-style: none;
     border-color: hsla(56, 100%, 56%, 0.88);
     border-radius: 50%;
@@ -71,23 +73,24 @@ body {
 .orbit-1 {
     width: 40vh;
     height: 40vh;
-    animation-duration: 13s;
-    animation-delay: 1s;
+    animation-duration: 20s;
+    animation-delay: -17s;
     z-index: 8;
 }
 
 .orbit-2 {
     width: 50vh;
     height: 50vh;
-    animation-duration: 15s;
-    animation-delay: 2s;
+    animation-duration: 22s;
+    animation-delay: -5s;
     z-index: 7;
 }
 
 .orbit-3 {
     width: 70vh;
     height: 70vh;
-    animation-duration: 17s;
+    animation-duration: 24s;
+    animation-delay: -9s;
     z-index: 6;
 }
 
@@ -96,14 +99,14 @@ body {
     height: 6vh;
     position: absolute;
     top: 50%;
-    animation: planets-an 6s linear infinite reverse;
+    animation: planets-an 16s linear infinite reverse;
 }
 
 .orbit-4 {
     width: 85vh;
     height: 85vh;
-    animation-duration: 19s;
-    animation-delay: 1.5s;
+    animation-duration: 29s;
+    animation-delay: -22s;
     z-index: 5;
 }
 
@@ -111,30 +114,31 @@ body {
     width: 110vh;
     height: 110vh;
     z-index: 4;
-    animation-duration: 19s;
-    animation-delay: 1.75s;
+    animation-duration: 32s;
+    animation-delay: -8s;
 }
 
 .orbit-6 {
     width: 135vh;
     height: 135vh;
-    animation-duration: 23s;
-    animation-delay: 1.30s;
+    animation-duration: 37s;
+    animation-delay: -25s;
     z-index: 3;
 }
 
 .orbit-7 {
     width: 160vh;
     height: 160vh;
-    animation-duration: 25s;
-    animation-delay: 2.25s;
+    animation-duration: 37s;
+    animation-delay: -13s;
     z-index: 2;
 }
 
 .orbit-8 {
     width: 185vh;
     height: 185vh;
-    animation-duration: 27s;
+    animation-duration: 50s;
+    animation-delay: -25s;
     z-index: 1;
 }
 
@@ -156,12 +160,10 @@ body {
 
 .mercury {
     width: 4vh;
-    animation-delay: 1s;
 }
 
 .venus {
     width: 5.4vh;
-    animation-delay: 2s;
 }
 
 .earth {
@@ -178,27 +180,22 @@ body {
 
 .mars {
     width: 5vh;
-    animation-delay: 1.5s;
 }
 
 .jupiter {
     width: 12.5vh;
-    animation-delay: 1.75s;
 }
 
 .saturn {
      width: 13.5vh;
-     animation-delay: 1.30s;
 }
 
 .uranus {
     width: 9vh;
-    animation-delay: 2.25s;
 }
 
 .neptune {
     width: 7vh;
-    z-index: 50;
 }
 
 /* -------------------------------------- */
@@ -227,30 +224,37 @@ body {
 
 @keyframes sun-an {
     0% {
+        background-color: #ffff80;
+        box-shadow: 0 -15px 60px rgba(255, 190, 60, 0.3);
+    }
+
+    16% {
         background-color: #ffff66;
+        box-shadow: 0 -15px 60px rgba(255, 201, 102, 0.3);
     }
 
-    16.66% {
-        background-color: #ffff00;
+    32% {
+        background-color: #ffff4d;
+        box-shadow: 0 -15px 60px rgba(249, 240, 150, 0.5);
     }
 
-    33.32% {
-        background-color: #ff5c33;
+    48% {
+        background-color: #ffff4d;
+        box-shadow: 0 -15px 60px rgba(255, 201, 102, 0.3);
     }
 
-    49.98% {
-        background-color: #e62e00;
+    60% {
+        background-color: #ffff4d;
+        box-shadow: 0 -15px 60px rgba(255, 190, 60, 0.3);
     }
 
-    66.64% {
-        background-color: #ff5c33;
-    }
-
-    83.3% {
-        background-color: #ffff00;
+    76% {
+        background-color: #ffff66;
+        box-shadow: 0 -15px 60px rgba(249, 240, 150, 0.5);
     }
 
     100% {
-        background-color: #ffff66;
+        background-color: #ffff80;
+        box-shadow: 0 -15px 60px rgba(255, 201, 102, 0.3);
     }
 }
