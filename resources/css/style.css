@@ -1,0 +1,404 @@
+/* -------------------------------------- */
+/* --- BASIC SETUP --- */
+/* -------------------------------------- */
+
+@font-face {
+    font-family: 'b-zar';
+    src: url(vendors/fonts/b-zar.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("img/Spacebackground.jpg");
+    background-color: #001a33;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+/* -------------------------------------- */
+/* --- Orbit tools (Container , line , orbits ) & Sunline --- */
+/* -------------------------------------- */
+
+.main-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.rotating-orbit {
+    border-radius: 50%;
+    border: 0;
+    animation: orbits-an linear infinite;
+    position: absolute;
+}
+
+.orbitline {
+    border: dashed hsla(0, 0%, 75%, 0.52);
+    border-radius: 50%;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin: 0;
+    transform: translate(-50%, -50%);
+    transition: border 0.5s;
+}
+
+.sunline {
+    background-color: #FB7209;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-style: none;
+    border-color: hsla(56, 100%, 56%, 0.88);
+    border-radius: 50%;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.orbit-1 {
+    width: 40vh;
+    height: 40vh;
+    animation-duration: 20s;
+    animation-delay: -17s;
+    z-index: 8;
+}
+
+.orbit-2 {
+    width: 50vh;
+    height: 50vh;
+    animation-duration: 22s;
+    animation-delay: -5s;
+    z-index: 7;
+}
+
+.orbit-3 {
+    width: 70vh;
+    height: 70vh;
+    animation-duration: 24s;
+    animation-delay: -9s;
+    z-index: 6;
+}
+
+.moon-orbit {
+    width: 6vh;
+    height: 6vh;
+    position: absolute;
+    animation: planets-an 16s linear infinite reverse;
+}
+
+.orbit-4 {
+    width: 85vh;
+    height: 85vh;
+    animation-duration: 29s;
+    animation-delay: -22s;
+    z-index: 5;
+}
+
+.orbit-5 {
+    width: 110vh;
+    height: 110vh;
+    z-index: 4;
+    animation-duration: 32s;
+    animation-delay: -8s;
+}
+
+.orbit-6 {
+    width: 135vh;
+    height: 135vh;
+    animation-duration: 37s;
+    animation-delay: -25s;
+    z-index: 3;
+}
+
+.orbit-7 {
+    width: 160vh;
+    height: 160vh;
+    animation-duration: 37s;
+    animation-delay: -13s;
+    z-index: 2;
+}
+
+.orbit-8 {
+    width: 185vh;
+    height: 185vh;
+    animation-duration: 50s;
+    animation-delay: -25s;
+    z-index: 1;
+}
+
+/* -------------------------------------- */
+/* --- Tooltips --- */
+/* -------------------------------------- */
+
+.tooltip {
+    position: absolute;
+    top: 50%;
+    animation: tooltip-an linear infinite;
+}
+
+.tooltip-1 {
+    width: 4vh;
+    height: 4vh;
+    animation-duration: 20s;
+    animation-delay: -17s;
+}
+
+.tooltip-2 {
+    width: 5.4vh;
+    height: 5.4vh;
+    animation-duration: 22s;
+    animation-delay: -5s;
+}
+
+.tooltip-3 {
+    width: 6vh;
+    height: 6vh;
+    animation-duration: 24s;
+    animation-delay: -9s;
+}
+
+.tooltip-4 {
+    width: 5vh;
+    height: 5vh;
+    animation-duration: 29s;
+    animation-delay: -22s;
+}
+
+.tooltip-5 {
+    width: 12.5vh;
+    height: 12.5vh;
+    animation-duration: 32s;
+    animation-delay: -8s;
+}
+
+.tooltip-6 {
+    width: 13.5vh;
+    height: 13.5vh;
+    animation-duration: 37s;
+    animation-delay: -25s;
+}
+
+.tooltip-7 {
+    width: 9vh;
+    height: 9vh;
+    animation-duration: 37s;
+    animation-delay: -13s;
+}
+
+.tooltip-8 {
+    width: 7vh;
+    height: 7vh;
+    animation-duration: 50s;
+    animation-delay: -25s;
+}
+
+.tooltip-text {
+    position: absolute;
+    width: 200px;
+    height: 0;
+    opacity: 0;
+    padding: 10px;
+    color: #fff;
+    right: 100%;
+    bottom: 100%;
+    visibility: hidden;
+    transform: translate(-25% , -40px);
+    transition: height 1s , opacity 1s , visibility 1s;
+}
+
+.tooltip-text::before {
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    transition: width 1s;
+}
+
+.tooltip-text::after {
+    content: '';
+    width: 60px;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    opacity: 0;
+    transform-origin: 100% 50%;
+    transform: rotate(225deg);
+    transition: opacity 1s;
+}
+
+/* -------------------------------------- */
+/* --- Sun & Planets --- */
+/* -------------------------------------- */
+
+.planet {
+    position: absolute;
+    animation: planets-an 20s linear infinite;
+    transition: border 0.8s;
+    border-radius: 50%;
+}
+
+.sun {
+    width: 32vh;
+    height: 32vh;
+    animation: sun-an 11s linear infinite;
+}
+
+.mercury {
+    width: 4vh;
+}
+
+.venus {
+    width: 5.4vh;
+}
+
+.earth {
+    width: 6vh;
+}
+
+.moon {
+    width: 1.5vh;
+    height: 1.5vh;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.mars {
+    width: 5vh;
+}
+
+.jupiter {
+    width: 12.5vh;
+}
+
+.saturn {
+     width: 13.5vh;
+}
+
+.uranus {
+    width: 9vh;
+}
+
+.neptune {
+    width: 7vh;
+}
+
+/* -------------------------------------- */
+/* --- JavaScript Classes --- */
+/* -------------------------------------- */
+
+/*********** Orbits ************/
+
+.js--stop-orbit {
+    animation-play-state: paused;
+}
+
+.js--orbit-highlight-on {
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+
+.js--orbit-highlight-off {
+    border: dashed hsla(0, 0%, 75%, 0.52);
+}
+
+/*********** Tooltips ************/
+
+.js--tooltip-text {
+    visibility: visible;
+    height: 70px;
+    opacity: 1;
+}
+
+.js--tooltip-text::before {
+    width: 80px;
+}
+
+.js--tooltip-text::after {
+    opacity: 1;
+}
+
+/* -------------------------------------- */
+/* --- Animation's --- */
+/* -------------------------------------- */
+
+@keyframes orbits-an {
+    from {
+        transform: rotate(200deg);
+    }
+
+    to {
+        transform: rotate(-10deg);
+    }
+}
+
+@keyframes planets-an {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes tooltip-an {
+    from {
+        transform: translate(-50% , -50%) rotate(-200deg);
+    }
+
+    to {
+        transform:translate(-50% , -50%) rotate(10deg);
+    }
+}
+
+@keyframes sun-an {
+    0% {
+        background-color: #ffff80;
+        box-shadow: 0 -15px 60px rgba(255, 190, 60, 0.3);
+    }
+
+    16% {
+        background-color: #ffff66;
+        box-shadow: 0 -15px 60px rgba(255, 201, 102, 0.3);
+    }
+
+    32% {
+        background-color: #ffff4d;
+        box-shadow: 0 -15px 60px rgba(249, 240, 150, 0.5);
+    }
+
+    48% {
+        background-color: #ffff4d;
+        box-shadow: 0 -15px 60px rgba(255, 201, 102, 0.3);
+    }
+
+    60% {
+        background-color: #ffff4d;
+        box-shadow: 0 -15px 60px rgba(255, 190, 60, 0.3);
+    }
+
+    76% {
+        background-color: #ffff66;
+        box-shadow: 0 -15px 60px rgba(249, 240, 150, 0.5);
+    }
+
+    100% {
+        background-color: #ffff80;
+        box-shadow: 0 -15px 60px rgba(255, 201, 102, 0.3);
+    }
+}
