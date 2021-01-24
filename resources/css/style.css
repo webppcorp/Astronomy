@@ -201,6 +201,7 @@ body {
     animation-delay: -25s;
 }
 
+/*********** Tooltips Top Left ************/
 .tooltip-text {
     position: absolute;
     width: 200px;
@@ -210,8 +211,8 @@ body {
     color: #fff;
     right: 100%;
     bottom: 100%;
+    transform: translate(-25px , -40%);
     visibility: hidden;
-    transform: translate(-25% , -40px);
     transition: height 1s , opacity 1s , visibility 1s;
 }
 
@@ -240,13 +241,94 @@ body {
     transition: opacity 1s;
 }
 
+/*********** Tooltips Buttom Left ************/
+.tooltip-text-bottom {
+    position: absolute;
+    width: 200px;
+    height: 0;
+    opacity: 0;
+    padding: 10px;
+    color: #fff;
+    right: 100%;
+    top: 100%;
+    transform: translate(-25px , 40%);
+    visibility: hidden;
+    transition: height 1s , opacity 1s , visibility 1s;
+}
+
+.tooltip-text-bottom::before {
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: width 1s;
+}
+
+.tooltip-text-bottom::after {
+    content: '';
+    width: 60px;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    transform-origin: 100% 50%;
+    transform: rotate(135deg);
+    transition: opacity 1s;
+}
+
+/*********** Tooltips Top Right ************/
+.tooltip-text-right {
+    position: absolute;
+    width: 200px;
+    height: 0;
+    opacity: 0;
+    padding: 10px;
+    color: #fff;
+    left: 100%;
+    bottom: 100%;
+    transform: translate(25px , -40%);
+    visibility: hidden;
+    transition: height 1s , opacity 1s , visibility 1s;
+
+}
+
+.tooltip-text-right::before {
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 1s;
+}
+
+.tooltip-text-right::after {
+    content: '';
+    width: 60px;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    transform-origin: 0 50%;
+    transform: rotate(135deg);
+    transition: opacity 1s;
+}
+
 /* -------------------------------------- */
 /* --- Sun & Planets --- */
 /* -------------------------------------- */
 
 .planet {
     position: absolute;
-    animation: planets-an 20s linear infinite;
+    /* animation: planets-an 20s linear infinite; */
     transition: border 0.8s;
     border-radius: 50%;
 }
